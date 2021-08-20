@@ -1,4 +1,4 @@
-import React, { Fragment, useReducer, useState } from 'react'
+import React, { Fragment, useEffect, useReducer, useState } from 'react'
 import classes from './FlightSearch.module.css'
 import FlightResult from '../FlightSearchResult/FlightResults'
 import TRANSLATIONS from '../../utils/translations'
@@ -45,6 +45,16 @@ const FlightSearch = (props) => {
   const [dateError, setDateError] = useState('')
   const dispatch = useDispatch();
 
+
+  useEffect(()=>{
+    if(formData && Object.keys(formData).length){
+           updateState({ type:'updateDepartFrom', value: formData.departFrom || '' })
+           updateState({ type:'updateGoingTo', value: formData.goingTo || '' })
+           updateState({ type:'updateClass', value: formData.class || '' })
+           updateState({ type:'updateTravellers', value: formData.travellers || '' })
+    }
+  },[])
+
   //Search Flight
   function searchFlights(event) {
     event.preventDefault()
@@ -59,7 +69,6 @@ const FlightSearch = (props) => {
       return
     }
     setDateError('')
-    console.log(state)
     dispatch(updateSearchFormData(state))
     dispatch(enableSeachResults(true))
   }
@@ -68,6 +77,7 @@ const FlightSearch = (props) => {
   //can be used refs but not using since management of refs is not good
 
   function onChangeSelect(event, type) {
+    console.log(event.target.value)
     if (event.target.value) {
       updateState({ type, value: event.target.value || '' })
     }
@@ -81,13 +91,13 @@ const FlightSearch = (props) => {
             <div className={classes.formGroup}>
               <label className={classes.formLabel}>{TRANSLATIONS.DEPART_FORM}</label>
               <SelectBox data={DepartFormData}
-                defaultValue={formData && formData['departFrom'] ? formData['departFrom'] : state.departFrom}
+                defaultValue={state.departFrom}
                 onChange={(event) => onChangeSelect(event, 'updateDepartFrom')} />
             </div>
             <div className={classes.formGroup}>
               <label className={classes.formLabel}>{TRANSLATIONS.GOING_TO}</label>
               <SelectBox data={GoingToFormData}
-                defaultValue={formData && formData['goingTo'] ? formData['goingTo'] : state.goingTo}
+                defaultValue={state.goingTo}
                 onChange={(event) => onChangeSelect(event, 'updateGoingTo')} />
             </div>
             <div className="rowFlex">
@@ -111,7 +121,7 @@ const FlightSearch = (props) => {
               <div>
                 <label className={classes.formLabel}>{TRANSLATIONS.TRAVELLERS}</label>
                 <input type="number" id="travellers"
-                  value={formData && formData['travellers'] ? formData['travellers'] : state.travellers}
+                  value={state.travellers}
                   name="travellers" min="1" max="100" className={classes.inputStyle}
                   onChange={(event) => onChangeSelect(event, 'updateTravellers')}
                   style={{ marginRight: '20px', width: '170px' }} />
@@ -119,13 +129,13 @@ const FlightSearch = (props) => {
               <div >
                 <label className={classes.formLabel}>{TRANSLATIONS.CLASS}</label>
                 <SelectBox style={{ width: '190px' }} data={classData}
-                  defaultValue={formData && formData['class'] ? formData['class'] : state.class}
+                  defaultValue={state.class}
                   onChange={(event) => onChangeSelect(event, 'updateClass')} />
               </div>
             </div>
             {dateError && <p style={{ color: 'red' }}>{dateError}</p>}
             <div className={classes.buttonContainer}>
-              <button className="buttonStyle" onClick={searchFlights}>Search Flights</button>
+              <button className="buttonStyle" onClick={searchFlights}>{TRANSLATIONS.SEARCH_FLIGHS}</button>
             </div>
           </form>
         </div>

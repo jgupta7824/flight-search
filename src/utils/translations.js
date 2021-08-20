@@ -10,6 +10,31 @@ const TRANSLATIONS={
    MAXMIMUM_PRICE:'Maximum Price',
    PROVIDE_FROMDATE_TODATE:'Please provide depart date and return date.',
    FROMDATE_CAN_NOT_BE_EMPTY:'If you wish to book return flight. Please provide Depart Date as well.',
-   FROMDATE_CAN_NOT_BE_GREATER:'Depature date can not be greater than return date'
+   FROMDATE_CAN_NOT_BE_GREATER:'Depature date can not be greater than return date',
+   SEARCH_FLIGHS:'Search Flight',
+   FLIGHT_NAME:'Flight Name',
+   DEPARTURE:'Departure',
+   ARRIVAL:'Arrival',
+   BASE_FAIR:'Base Fare',
+   CABIN_FARE:'Cabin Fare',
+   ECONOMY_FARE:'Economy Fare',
+   BOOK_BUTTON:'Book',
+   SORT_BY:'Sort By',
+   PRICE_SORT_LOW_HIGHT:'Price (Lowest to Highest)',
+   PRICE_SORT_HIGH_LOW:'Price (Highest to Lowest)',
+   DURATION_SORT_HIGH_LOW:'Duration (Longest to Shortest)',
+   DURATION_SORT_LOW_HIGH:'Duration (Shortest to Longest)',
+   DEPARTURE_SORT_LOW_HIGH:'Departure (Earliest to Latest)',
+   DEPARTURE_SORT_HIGH_LOW:'Departure (Latest to Earliest)',
+   AIRLINE_A_Z:'Airline (A to Z)',
+   AIRLINE_Z_A:'Airline (Z to A)',
+   FILTER_BY:'Filter By',
+   APPLY:'Apply',
+   PRICE_RANGE:'Price Range',
+   BOOKING_CLASS:'Booking Class',
+   ECONOMY:'Economy',
+   FIRST_CLASS:'First Class',
+   RESET_ALL:'Reset All'
+
 }
 export default TRANSLATIONS
