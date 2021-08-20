@@ -19,6 +19,8 @@ const FlightResult = (props) => {
     const [defaultMinFare, setDefaultMinFare] = useState('')
     const [defaultMaxFare, setDefaultMaxFare] = useState('')
     const [economyFilter, setEconomyFilter] = useState({})
+    //preserve sorted data to apply filters 
+    const [sortedData, setSortedData] = useState(FlightData)
     const history = useHistory()
 
     useEffect(() => {
@@ -83,6 +85,7 @@ const FlightResult = (props) => {
                     (parseFloat(flight.arrival) - parseFloat(flight.departure))
             }
         })
+        setSortedData(array)
         setFlightData(array)
     }
 
@@ -123,7 +126,7 @@ const FlightResult = (props) => {
     function applyFilter() {
         let array = []
         let condition;
-        array = updatedFlightData.filter((value, index) => {
+        array = sortedData.filter((value, index) => {
             condition = value['baseFair'] >= (minFare || getMinValue().defaultMinFare)
                 && value['baseFair'] <= (maxFare || getMinValue().defaultMaxFare)
             if (economyFilter.economy) {
@@ -134,7 +137,6 @@ const FlightResult = (props) => {
             }
             return condition
         })
-        console.log(array)
         setFlightData(array)
     }
 

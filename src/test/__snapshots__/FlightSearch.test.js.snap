@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render FlightSearch Component render FlightSearch  page 1`] = `
+<Fragment>
+  <div
+    className="panel"
+    id="container"
+  >
+    <div
+      className="formContainer"
+    >
+      <form>
+        <div
+          className="formGroup"
+        >
+          <label
+            className="formLabel"
+          >
+            Depart Form
+          </label>
+          <SelectBox
+            data={
+              Array [
+                Object {
+                  "id": "IXC",
+                  "name": "Chandigarh (IXC)",
+                },
+                Object {
+                  "id": "BLR",
+                  "name": "Bangalore (BLR)",
+                },
+                Object {
+                  "id": "MAA",
+                  "name": "Chennai (MAA)",
+                },
+                Object {
+                  "id": "DEL",
+                  "name": "New Delhi (DEL)",
+                },
+                Object {
+                  "id": "JAI",
+                  "name": "Jaipur (JAI)",
+                },
+              ]
+            }
+            defaultValue="Chandigarh (IXC)"
+            onChange={[Function]}
+          />
+        </div>
+        <div
+          className="formGroup"
+        >
+          <label
+            className="formLabel"
+          >
+            Going To
+          </label>
+          <SelectBox
+            data={
+              Array [
+                Object {
+                  "id": "BOM",
+                  "name": "Mumbai (BOM)",
+                },
+                Object {
+                  "id": "GOI",
+                  "name": "Goa (GOI)",
+                },
+                Object {
+                  "id": "MAA",
+                  "name": "Kolkata (CCU)",
+                },
+                Object {
+                  "id": "PNQ",
+                  "name": "Pune (PNQ)",
+                },
+                Object {
+                  "id": "KNU",
+                  "name": "Kanpur (KNU)",
+                },
+              ]
+            }
+            defaultValue="Mumbai (BOM)"
+            onChange={[Function]}
+          />
+        </div>
+        <div
+          className="rowFlex"
+        >
+          <div>
+            <label
+              className="formLabel"
+            >
+              Depart Date
+            </label>
+            <Date
+              min="2021-08-20"
+              onChange={[Function]}
+              style={
+                Object {
+                  "marginRight": "20px",
+                  "width": "175px",
+                }
+              }
+              value="2021-08-20"
+            />
+          </div>
+          <div>
+            <label
+              className="formLabel"
+            >
+              Return Date
+            </label>
+            <Date
+              min="2021-08-20"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": "175px",
+                }
+              }
+              value="2021-08-20"
+            />
+          </div>
+        </div>
+        <div
+          className="rowFlex"
+        >
+          <div>
+            <label
+              className="formLabel"
+            >
+              Travelers
+            </label>
+            <input
+              className="inputStyle"
+              id="travellers"
+              max="100"
+              min="1"
+              name="travellers"
+              onChange={[Function]}
+              style={
+                Object {
+                  "marginRight": "20px",
+                  "width": "170px",
+                }
+              }
+              type="number"
+              value={1}
+            />
+          </div>
+          <div>
+            <label
+              className="formLabel"
+            >
+              Class
+            </label>
+            <SelectBox
+              data={
+                Array [
+                  Object {
+                    "id": "economy",
+                    "name": "Economy",
+                  },
+                  Object {
+                    "id": "basic",
+                    "name": "Basic",
+                  },
+                  Object {
+                    "id": "main",
+                    "name": "Main",
+                  },
+                ]
+              }
+              defaultValue="Economy"
+              onChange={[Function]}
+              style={
+                Object {
+                  "width": "190px",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="buttonContainer"
+        >
+          <button
+            className="buttonStyle"
+            onClick={[Function]}
+          >
+            Search Flight
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
